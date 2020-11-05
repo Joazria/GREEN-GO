@@ -1,0 +1,17 @@
+<h2>Edit Your Band</h2>
+  <%= simple_form_for @band do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :local %>
+  <%= f.input :release %>
+  <%= f.input :team %>
+  <%= f.input :website %>
+  <%= f.input :facebook %>
+  <%= f.input :instagram %>
+  <%= f.input :youtube %>
+  <%= f.input :soundcloud %>
+  <%= f.input :spotify %>
+  <%= f.input :photo, as: :file %>
+
+    <%= f.submit "Edit Band", class: "btn btn-primary" %>
+  <% end %>
