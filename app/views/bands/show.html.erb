@@ -1,10 +1,33 @@
-<h1><%= @band.name %></h1>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
-  <div class="container">
-    <h1><%= @band.name %><strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-ghost" href="#">Book now</a>
+
+<div class="container">
+  <div class="main-container">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
+      <h1><%= @band.name %><strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <a class="btn btn-ghost" href="#">Book now</a>
+    </div>
   </div>
 </div>
 
-<p><%= @band.release %></p>
+<div class="container">
+  <div class="main-container">
+    <div class="links">
+      <ul>
+        <li><i class="fab fa-youtube"></i></li>
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-spotify"></i></li>
+        <li><i class="fab fa-instagram"></i></li>
+      </ul>
+    </div>
+
+      <div class="youtubevideo">
+      <%= get_video_iframe(@band.youtube) %>
+      </div>
+
+    <div class="release">
+      <p><%= @band.release %></p>
+    </div>
+
+
+  </div>
+</div>

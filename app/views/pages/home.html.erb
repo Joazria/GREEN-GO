@@ -1,19 +1,21 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1604688711/Birds%20Booking/live_ruh9vp.jpg);">
-  <div class="container">
-    <h1>Birds Booking <strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+
+<div class="container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1604688711/Birds%20Booking/live_ruh9vp.jpg);">
+      <h1>Birds Booking <strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
   </div>
-</div>
+ </div>
 
-<br>
-
-<div class="cards">
-  <% @bands.each do |band| %>
-  <%= link_to band do %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path band.photo.key, :effect=>"art:zorro", crop: :fill %>')">
-      <%= band.name %>
-    </div>
+  <br>
+<div class="container">
+  <div class="cards">
+    <% Band.all.each do |band| %>
+    <%= link_to band do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path band.photo.key, :effect=>"art:zorro", crop: :fill %>')">
+        <%= band.name %>
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
 </div>
