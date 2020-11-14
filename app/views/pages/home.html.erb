@@ -1,13 +1,15 @@
 
 <div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1604688711/Birds%20Booking/live_ruh9vp.jpg);">
-      <h1>Birds Booking <strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
-      <a class="btn btn-flat" href="#">Apply now</a>
-  </div>
+  <div class="main-container">
+      <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1604688711/Birds%20Booking/live_ruh9vp.jpg);">
+          <h1>Birds Booking <strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
+          <p>Change your life and learn to code at one of our campuses around the world.</p>
+          <a class="btn btn-flat" href="#">Contact Us</a>
+      </div>
+    </div>
+      <%= render 'shared/search' %>
  </div>
 
-  <br>
 <div class="container">
   <div class="cards">
     <% Band.all.each do |band| %>

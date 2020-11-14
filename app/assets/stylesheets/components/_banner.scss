@@ -1,16 +1,23 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  height: 450px;
+}
+
+#image {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .banner h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
-  padding: 0px 150px;
+  margin-top: 300px;
+  margin-left: 100px;
+  width: 250%;
 }
 
 .banner p {
@@ -18,9 +25,12 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  padding: 0px 150px;
+  margin-left: 100px;
+
 }
 
-.banner a.btn.btn-ghost {
-  margin: 150px;
+.banner a.btn {
+  margin-bottom: 30px;
+  margin-left: 100px;
+
 }

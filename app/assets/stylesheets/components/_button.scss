@@ -10,20 +10,20 @@
 
 .btn-ghost:hover {
   opacity: 1;
-  color: #1EDD88;
-  border: 1px solid #1EDD88;
+  color: green;
+  border: 1px solid green;
 }
 
 .btn-flat {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: green;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  background: green;
   color: white;
 }
 

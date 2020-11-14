@@ -1,34 +1,77 @@
 .main-container {
-  display: flex;
-  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1 fr 1fr;
+  grid-template-rows: 1 fr 1fr 1fr 1fr;
+  position: relative;
 }
 
 .release{
-  flex-grow: 1;
-  margin-left: 30px;
-  border: 1px solid rgba(0,0,0,0.1);
+  grid-row: 2 / span 2;
+  grid-column: 2 / span 2;
+  padding-top: 100px;
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 
+.release p {
+  margin-top: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+
 .youtubevideo{
-  flex: 0 0 450px;
+  grid-row: 1/ span 2;
+  grid-column: 2 / span 2;
+  height: 100vh;
 }
 
 .links {
-  box-shadow: 5px 5px 4px #888888;
-  flex: 0 0 200px;
-  height: 100vh;
+  grid-row: 1/ span 1;
+  grid-column: 3 / span 1;
+  box-shadow: 5px 5px 5px 4px #888888;
+
 }
 
 .links ul {
   list-style: none;
+  text-decoration: none;
   padding: 0px;
 }
 
 .links li {
   padding: 10px 25px;
+
+}
+.links a {
+  font-size: 35px;
+  text-decoration: none;
+  color: gray;
 }
 
-.links i {
-  font-size: 25px;
+ a:hover {
+  color: green;
 }
 
+.spotify_player {
+  grid-row: 1/ span 1;
+  grid-column: 1 / span 1;
+  padding-right: 30px;
+}
+
+.dates {
+  padding-top: 20px;
+  grid-row: 2/ span 1;
+  grid-column: 1 / span 1;
+  padding-right: 30px;
+}
+
+h1 {
+  color: green;
+}
+
+
+.material {
+  grid-row: 4 / span 2;
+  grid-column: 2 / span 2;
+  padding-top: 100px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}

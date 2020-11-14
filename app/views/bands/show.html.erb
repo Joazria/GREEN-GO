@@ -1,33 +1,66 @@
 
 <div class="container">
   <div class="main-container">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
+    <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
       <h1><%= @band.name %><strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
       <p>Change your life and learn to code at one of our campuses around the world.</p>
-      <a class="btn btn-ghost" href="#">Book now</a>
+      <a class="btn btn-flat" href="#">Book now</a>
+     </div>
     </div>
+      <%= render 'shared/search' %>
   </div>
-</div>
-
 <div class="container">
   <div class="main-container">
     <div class="links">
       <ul>
-        <li><i class="fab fa-youtube"></i></li>
-        <li><i class="fab fa-facebook"></i></li>
-        <li><i class="fab fa-spotify"></i></li>
-        <li><i class="fab fa-instagram"></i></li>
+        <li><%= link_to "", @band.instagram , :class => "fab fa-instagram", :target => '_blank'  %> </li>
+        <li><%= link_to "", "https://open.spotify.com/artist/#{@band.spotify}" , :class => "fab fa-spotify", :target => '_blank'  %> </li>
+        <li><%= link_to "", @band.youtube , :class => "fab fa-youtube", :target => '_blank'  %> </li>
+        <li><%= link_to "", @band.facebook , :class => "fab fa-facebook", :target => '_blank'  %> </li>
       </ul>
     </div>
-
       <div class="youtubevideo">
-      <%= get_video_iframe(@band.youtube) %>
+        <%= get_video_iframe(@band.youtube) %>
       </div>
-
     <div class="release">
+     <%= link_to "site web", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+
+     <br><br>
+     <h1>Release</h1>
       <p><%= @band.release %></p>
     </div>
 
+    <br><br>
+    <div class="spotify_player">
+      <iframe src="https://open.spotify.com/embed/artist/<%= @band.spotify %>" width="300" height="380" frameborder="0"></iframe>
+
+   </div>
+
+     <div class="dates">
+        <h1>NEXT SHOWS</h1>
+        <h3>04 Nov 2019</h3>
+        <p>Circo Voadora - RJ <span>+ infos</span> </p>
+        <h3>04 Nov 2019</h3>
+        <p>Circo Voadora - RJ <span>+ infos</span> </p>
+         <h3>04 Nov 2019</h3>
+        <p>Circo Voadora - RJ <span>+ infos</span> </p>
+        <h3>04 Nov 2019</h3>
+        <p>Circo Voadora - RJ <span>+ infos</span> </p>
+        <h3>04 Nov 2019</h3>
+        <p>Circo Voadora - RJ <span>+ infos</span> </p>
+        <h3>04 Nov 2019</h3>
+      </div>
+
+      <div class="material">
+       <h1>MATERIAL :: Only if logged</h1>
+        <%= link_to "team members", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+        <%= link_to "technical rider", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+        <%= link_to " Mapa do Palco ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+        <%= link_to " Fotos - HD ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+        <%= link_to " Clipping ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+  </div>
 
   </div>
+
+
 </div>
