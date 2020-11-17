@@ -31,6 +31,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'devise'
 gem 'email_validator'
 gem 'youtube_embed'
+gem "redcarpet"
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
