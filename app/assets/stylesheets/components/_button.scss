@@ -20,11 +20,13 @@
   border-radius: 4px;
   background: green;
   transition: background 0.3s ease;
+  border: 1px solid rgba(0,0,0,0);
 }
 
 .btn-flat:hover {
-  background: green;
-  color: white;
+  background: white;
+  color: green;
+  border: 1px solid green;
 }
 
 .btn-gradient {
