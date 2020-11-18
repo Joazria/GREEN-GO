@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_095354) do
+ActiveRecord::Schema.define(version: 2020_11_18_193204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_095354) do
     t.string "yt_video_three"
     t.string "yt_video_destak"
     t.string "destak_discr"
+    t.string "headline"
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 

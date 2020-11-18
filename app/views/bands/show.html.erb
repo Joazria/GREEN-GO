@@ -1,15 +1,14 @@
 
 <div class="container">
-  <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
-      <h1><%= @band.name %> <strong>Agenciamento</strong> to <strong>creative people</strong>!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
-      <a class="btn btn-flat" href="#">Book now</a>
-  </div>
-  <%= render 'shared/search' %>
+    <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
+        <h1><%= @band.name %> </h1>
+        <p><%= @band.headline %></p>
+        <a class="btn btn-flat" href="#">Book now</a>
+    </div>
+    <%= render 'shared/search' %>
 </div>
 
 
-  </div>
 <div class="container">
   <div class="main-container">
     <div class="links">
@@ -23,6 +22,7 @@
 
     <div class="youtubevideo">
         <%= get_video_iframe(@band.youtube, width = "600px", height = "400px")%>
+        <h2> <%= @band.destak_discr %> </h2>
     </div>
 
     <div class="release text-justify">
@@ -41,53 +41,62 @@
     </div>
 
      <div class="dates">
-        <h1>NEXT SHOWS</h1>
-        <h3>04 Nov 2019</h3>
-        <p>Circo Voadora - RJ <span>+ infos</span> </p>
-        <h3>04 Nov 2019</h3>
-        <p>Circo Voadora - RJ <span>+ infos</span> </p>
-         <h3>04 Nov 2019</h3>
-        <p>Circo Voadora - RJ <span>+ infos</span> </p>
-        <h3>04 Nov 2019</h3>
-        <p>Circo Voadora - RJ <span>+ infos</span> </p>
-        <h3>04 Nov 2019</h3>
-        <p>Circo Voadora - RJ <span>+ infos</span> </p>
-        <h3>04 Nov 2019</h3>
+        <h1>Agenda</h1>
+        <div class="card-date">
+          <h3>04/11/2019</h2>
+          <h4>CIRCO VOADOR </h4>
+          <p>Rio de Janeiro - RJ</p>
+        </div>
+        <div class="card-date">
+          <h3>05/11/2019</h2>
+          <h4> SESC PALADIUM </h4>
+          <p>Belo Horizonte - MG</p>
+        </div>
+        <div class="card-date">
+          <h3>06/11/2019</h2>
+          <h4> CULTURAL </h4>
+          <p>Juiz de Forra - MG</p>
+        </div>
+         <div class="card-date">
+          <h3>07/11/2019</h2>
+          <h4> SESC POMPEIA </h4>
+          <p>São Paulo - SP</p>
+        </div>
+          <div class="card-date">
+          <h3>08/11/2019</h2>
+          <h4> CULTURAL </h4>
+          <p>Porto Alegre - RS</p>
+        </div>
+
       </div>
 
-      <div class="material">
-       <h1>MATERIAL :: Only if logged</h1>
+    <!--  <div class="material">
+       <h3>MATERIAL :: Only if logged</h3>
         <%= link_to "team members", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
         <%= link_to "technical rider", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
         <%= link_to " Mapa do Palco ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
         <%= link_to " Fotos - HD ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
         <%= link_to " Clipping ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
+      </div> -->
+
+      <div class="video-title">
+        <h1>Videos Lives</h1>
       </div>
 
-  <div class="youtube-one">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px") %>
-  </div>
+      <div class="youtube-one">
+        <%= get_video_iframe(@band.yt_video_one, width = "280px", height = "167px") %>
+      </div>
 
-  <div class="youtube-two">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px") %>
-  </div>
+      <div class="youtube-two">
+        <%= get_video_iframe(@band.yt_video_two, width = "280px", height = "167px") %>
+      </div>
 
-  <div class="youtube-three">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px")%>
-  </div>
-</div>
+      <div class="youtube-three">
+        <%= get_video_iframe(@band.yt_video_three, width = "280px", height = "167px")%>
+      </div>
 
-<div class="flex-container"></div>
-  <div class="flex-item">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px") %>
-  </div>
-
-  <div class="flex-item">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px") %>
-  </div>
-
-  <div class="flex-item">
-    <%= get_video_iframe(@band.youtube, width = "250px", height = "160px")%>
-  </div>
+    </div>
 
 </div>
+
+

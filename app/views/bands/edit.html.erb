@@ -1,17 +1,26 @@
-<h2>Edit Your Band</h2>
-  <%= simple_form_for @band do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :local %>
-  <%= f.input :release %>
-  <%= f.input :team %>
-  <%= f.input :website %>
-  <%= f.input :facebook %>
-  <%= f.input :instagram %>
-  <%= f.input :youtube %>
-  <%= f.input :soundcloud %>
-  <%= f.input :spotify %>
-  <%= f.input :photo, as: :file %>
 
+<div class="container">
+  <h2>Edit Your Band</h2>
+
+  <%= simple_form_for @band do |f| %>
+    <%= f.input :name, placeholder: 'username' %>
+    <%= f.input :email, placeholder: 'user@domain.com' %>
+    <%= f.input :local, placeholder: 'RJ / SP / FRANCE' %>
+    <%= f.input :headline, placeholder: 'Describe the best in on line' %>
+    <%= f.input :release, placeholder: 'Use Markdown to style your release text' %>
+    <%= f.input :team, placeholder: 'Quantos pessoas tem na sua equipe (tecnicos incluidos)'  %>
+    <%= f.input :website, placeholder: 'www.domain.com' %>
+    <%= f.input :facebook, placeholder: 'facebook/account'  %>
+    <%= f.input :instagram, placeholder: 'instagram/account' %>
+    <%= f.input :soundcloud, placeholder: 'soundcloud/account'%>
+    <%= f.input :spotify, placeholder: 'spotify/IDofYourAccount' %>
+    <%= f.input :youtube , placeholder: 'youtube/account'%>
+    <%= f.input :yt_video_destak, placeholder: 'Best/Last Youtube video destak' %>
+    <%= f.input :destak_discr, placeholder: 'Description of your video Destak caractere 256' %>
+    <%= f.input :yt_video_one, placeholder: 'link youtube video live 1'%>
+    <%= f.input :yt_video_two, placeholder: 'link youtube video live 2' %>
+    <%= f.input :yt_video_three, placeholder: 'link youtube video live 3' %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Edit Band", class: "btn btn-primary" %>
   <% end %>
+</div>
