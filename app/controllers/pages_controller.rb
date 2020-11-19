@@ -5,4 +5,9 @@ class PagesController < ApplicationController
     @bands = Band.all
   end
 
+   def about_us
+    @bands = Band.all
+  end
+
+
 end

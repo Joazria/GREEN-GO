@@ -166,10 +166,12 @@ h3 {
 }
 .card-date:hover {
   opacity: 1;
-  color: green;
   border: 1px solid green;
-}
 
+  & H3 {
+   opacity: 1;
+  }
+}
 
 .card-date h4 {
   font-size: 16px;
