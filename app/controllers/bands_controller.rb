@@ -6,6 +6,7 @@ class BandsController < ApplicationController
   end
 
   def show
+    @bands = Band.all
   end
 
   def new
@@ -41,7 +42,7 @@ class BandsController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_båand
+  def set_band
     @band = Band.find(params[:id])
   end
 
