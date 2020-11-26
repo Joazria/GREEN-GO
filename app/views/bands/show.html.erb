@@ -42,26 +42,16 @@
 
      <div class="dates">
         <h1>Agenda</h1>
+          <%  @band.gigs.each do |gig| %>
+       <%= link_to gig do %>
         <div class="card-date">
-          <h3>04/11/2019</h2>
-          <h4>CIRCO VOADOR </h4>
-          <p>Rio de Janeiro - RJ</p>
+          <h3> <%= gig.date %></h3>
+          <h4> <%= gig.local.capitalize %></h4>
+          <p> <%= gig.address%>  - <%= gig.state %> </p>
         </div>
-        <div class="card-date">
-          <h3>05/11/2019</h2>
-          <h4> SESC PALADIUM </h4>
-          <p>Belo Horizonte - MG</p>
-        </div>
-        <div class="card-date">
-          <h3>06/11/2019</h2>
-          <h4> CULTURAL </h4>
-          <p>Juiz de Forra - MG</p>
-        </div>
-         <div class="card-date">
-          <h3>07/11/2019</h2>
-          <h4> SESC POMPEIA </h4>
-          <p>São Paulo - SP</p>
-        </div>
+     <% end %>
+  <% end %>
+
           <div class="card-date">
           <h3>08/11/2019</h2>
           <h4> CULTURAL </h4>
