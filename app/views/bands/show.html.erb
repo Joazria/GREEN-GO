@@ -21,7 +21,7 @@
     </div>
 
     <div class="youtubevideo">
-        <%= get_video_iframe(@band.youtube, width = "600px", height = "400px")%>
+        <%= get_video_iframe(@band.youtube)%>
         <h2> <%= @band.destak_discr %> </h2>
     </div>
 
@@ -41,12 +41,11 @@
     </div>
 
      <div class="dates">
-        <h1>Agenda</h1>
           <%  @band.gigs.each do |gig| %>
        <%= link_to gig do %>
         <div class="card-date">
-          <h3> <%= gig.date %></h3>
-          <h4> <%= gig.local.capitalize %></h4>
+          <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
+          <h4> <%= gig.local.upcase %></h4>
           <p> <%= gig.address%>  - <%= gig.state %> </p>
         </div>
      <% end %>
@@ -70,7 +69,7 @@
       </div> -->
 
       <div class="video-title">
-        <h1>Videos Lives</h1>
+        <h2>Videos Lives</h2>
       </div>
 
       <div class="youtube-one">

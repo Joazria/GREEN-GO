@@ -43,3 +43,18 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+
+
+.btn-site {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: gray;
+  transition: background 0.3s ease;
+}
+
+.btn-site:hover {
+  background: green;
+  color: white;
+}
