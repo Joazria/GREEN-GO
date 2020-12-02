@@ -1,0 +1,37 @@
+<div class="container">
+<div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
+        <h1><%= @band.name %> </h1>
+        <p><%= @band.headline %></p>
+    </div>
+
+
+
+
+  <h1>NEW OFFER REGISTRATION</h1>
+
+  <%= simple_form_for [ @band, @offer ] do |f| %>
+   <%= f.input :event_name, label: 'Qual é o nome do seu evento', placeholder: 'Nome do Seu Evento' %>
+    <%= f.input :release, placeholder: 'Fala um pouco mais da proposta do seu evento' %>
+    <%= f.input :link_do_event, placeholder: 'link do site do evento ou do local do evento  '  %>
+    <%= f.input :line_up, placeholder: 'Tem outras bandas convidadas ?' %>
+   <%= f.input :date, label: 'Quando?',placeholder: 'Quando vai acontercer' %>
+    <%= f.input :format, label: 'Festival / Show proprio / Corporate / privado', placeholder: 'O evento vai ter diffusão online ? '  %>
+    <%= f.input :streaming, placeholder: 'O evento vai ter diffusão online ? '  %>
+    <%= f.input :show_time,label: 'Que horas ?', placeholder: 'Horario do show previsto' %>
+   <%= f.input :ticket,label: 'ingresso', placeholder: 'valor do ingresso medio'  %>
+    <%= f.input :local,label: 'Local do evento', placeholder: 'onde vai acontecer seu evento' %>
+    <%= f.input :capacity,label: 'estimação do publico', placeholder: 'capacidade do evento'  %>
+    <%= f.input :address,label: 'endereço do evento', placeholder: 'Qual é o endereço do local do evento'  %>
+    <%= f.input :patrocino, label: 'Vc tem patrocinador',placeholder: 'Seu evento tem patrocino? sim, quem ?  '  %>
+    <%= f.input :fee, label: 'CONDIÇÕES : Cachê', placeholder: 'Proposta de caché'  %>
+    <%= f.input :transport, label: 'CONDIÇÕES : Transporte', placeholder: 'o transporte é pago pelo evento '  %>
+    <%= f.input :accommodation, label: 'CONDIÇÕES : accommodation', placeholder: 'o produtor offerece o hospedagem ? '  %>
+    <%= f.input :perdiem,label: 'CONDIÇÕES : Alimentação',  placeholder: 'Seu evento tem patrocino? sim, quem ?  '  %>
+    <%= f.input :backline, label: 'CONDIÇÕES : Backline', placeholder: 'Vc fornece o backline conforme ao rider da banda'  %>
+
+
+    <p><%= f.submit "Send my offer to the band", class: "btn btn-primary" %></p>
+  <% end %>
+
+
+

@@ -2,7 +2,7 @@
 .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 400px 60px 60px 60px 400px 60px 280px ;
+    grid-template-rows: 400px 60px 60px 60px 400px 280px ;
     gap: 20px;
   }
 
@@ -154,14 +154,9 @@ li {
    }
 }
 
-.video-title {
-  grid-row: 6/ span 1;
-  font-size: 1em;
-  text-align:center;
-}
 
 .youtube-one{
-  grid-row: 7/ span 1;
+  grid-row: 6/ span 1;
   grid-column: 1 / span 1;
   text-align: center;
 
@@ -173,7 +168,7 @@ li {
 }
 
 .youtube-two{
-  grid-row: 7/ span 1;
+  grid-row: 6/ span 1;
   grid-column: 2 / span 1;
   text-align: center;
 
@@ -187,7 +182,7 @@ li {
 
 .youtube-three{
 
-  grid-row: 7/ span 1;
+  grid-row: 6/ span 1;
   grid-column: 3 / span 1;
   text-align: center;
 
@@ -227,7 +222,7 @@ h2 {
 @media (min-width: 100px) and (max-width: 575px) {
   .main-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 400px 60px 60px 400px 400px 60px 60px 300px 80px 250px 250px 250px;
+    grid-template-rows: 400px 60px 60px 400px 400px 60px 60px 300px 250px 250px 250px;
 
   }
 
@@ -277,15 +272,8 @@ h2 {
 
 }
 
-.video-title {
-  grid-row: 9/ span 1;
-  padding-top: 20px;
-  color:green;
-
-}
-
 .youtube-one{
-  grid-row: 10/ span 1;
+  grid-row: 9/ span 1;
   grid-column: 1 / span 1;
 
    & iframe{
@@ -295,7 +283,7 @@ h2 {
 }
 
 .youtube-two{
-  grid-row: 11/ span 1;
+  grid-row: 10/ span 1;
   grid-column: 1 / span 1;
 
    & iframe{
@@ -307,7 +295,7 @@ h2 {
 
 .youtube-three{
 
-  grid-row: 12/ span 1;
+  grid-row: 11/ span 1;
   grid-column: 1 / span 1;
 
    & iframe{

@@ -3,7 +3,7 @@
     <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
         <h1><%= @band.name %> </h1>
         <p><%= @band.headline %></p>
-        <a class="btn btn-flat" href="#">Book now</a>
+         <%= link_to "Book Now", new_band_offer_path(@band) , :class => "btn btn-flat" %>
     </div>
     <%= render 'shared/search' %>
 </div>
@@ -11,7 +11,7 @@
 
 <div class="container">
   <div class="main-container">
-    <div class="links">
+  <div class="links">
       <ul>
         <li class="list-inline-item"><%= link_to "", @band.instagram , :class => "fab fa-instagram", :target => '_blank'  %> </li>
         <li class="list-inline-item"><%= link_to "", "https://open.spotify.com/artist/#{@band.spotify}" , :class => "fab fa-spotify", :target => '_blank' %> </li>
@@ -51,12 +51,6 @@
      <% end %>
   <% end %>
 
-          <div class="card-date">
-          <h3>08/11/2019</h2>
-          <h4> CULTURAL </h4>
-          <p>Porto Alegre - RS</p>
-        </div>
-
       </div>
 
     <!--  <div class="material">
@@ -67,10 +61,6 @@
         <%= link_to " Fotos - HD ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
         <%= link_to " Clipping ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
       </div> -->
-
-      <div class="video-title">
-        <h2>Videos Lives</h2>
-      </div>
 
       <div class="youtube-one">
         <%= get_video_iframe(@band.yt_video_one, width = "280px", height = "167px") %>
@@ -83,9 +73,7 @@
       <div class="youtube-three">
         <%= get_video_iframe(@band.yt_video_three, width = "280px", height = "167px")%>
       </div>
-
     </div>
-
 </div>
 
 

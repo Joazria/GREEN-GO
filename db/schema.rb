@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_135329) do
+ActiveRecord::Schema.define(version: 2020_12_02_193635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,33 @@ ActiveRecord::Schema.define(version: 2020_11_23_135329) do
     t.index ["band_id"], name: "index_gigs_on_band_id"
   end
 
+  create_table "offers", force: :cascade do |t|
+    t.string "event_name"
+    t.string "local"
+    t.text "release"
+    t.integer "fee"
+    t.date "date"
+    t.time "show_time"
+    t.string "line_up"
+    t.bigint "user_id", null: false
+    t.bigint "band_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "format"
+    t.string "patrocino"
+    t.string "link_do_event"
+    t.string "address"
+    t.string "transport"
+    t.string "accommodation"
+    t.string "perdiem"
+    t.string "backline"
+    t.string "ticket"
+    t.string "capacity"
+    t.string "streaming"
+    t.index ["band_id"], name: "index_offers_on_band_id"
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
+
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -103,4 +130,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_135329) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bands", "users"
   add_foreign_key "gigs", "bands"
+  add_foreign_key "offers", "bands"
+  add_foreign_key "offers", "users"
 end

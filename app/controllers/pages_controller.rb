@@ -14,4 +14,9 @@ class PagesController < ApplicationController
     @bands = Band.all
   end
 
+    def profile
+    @bands = Band.all
+  end
+
+
 end
