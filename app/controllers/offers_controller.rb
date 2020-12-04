@@ -20,7 +20,7 @@ class OffersController < ApplicationController
     @offer.band = @band
     @offer.user = current_user
     if @offer.save
-      redirect_to @band, notice: "Your offer was successfully send."
+      redirect_to  profile_path, notice: "Your offer was successfully send."
     else
       render :new
     end
@@ -40,7 +40,6 @@ class OffersController < ApplicationController
     @offer.destroy
     redirect_to root_path, notice: "Your offer was successfully destroyed."
   end
-
 
   private
 

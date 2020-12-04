@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-    before_action :set_band, only: [:show, :edit, :update, :destroy]
+    before_action :set_band, only: [:band_offers, :show, :edit, :update, :destroy]
 
   def index
       @bands = Band.all
