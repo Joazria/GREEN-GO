@@ -1,11 +1,12 @@
 class Band < ApplicationRecord
   belongs_to :user
   has_many :gigs
+  has_many :offers
 
   has_one_attached :photo
 
   validates :name, uniqueness: true
-  validates :email, :website, :facebook, :instagram, :youtube, :soundcloud, :spotify, :local, presence: true
+  validates :email, :website, :facebook, :instagram, :youtube, :soundcloud, :spotify, :city, :state, :country, presence: true
   validates :team, presence: true, numericality: { only_integer: true }
 
  include PgSearch::Model

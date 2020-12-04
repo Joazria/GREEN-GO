@@ -1,22 +1,27 @@
 <div class="container">
-    <%  @bands.shuffle.first(1).each do |band| %>
-    <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
-        <h1><%= band.name %> </h1>
-        <p><%= band.headline %></p>
-         <%= link_to "Book Now", new_band_offer_path(band) , :class => "btn btn-flat" %>
+  <div class="row">
+    <%  @bands.each do |band| %>
+          <% band.offers.each do |offer| %>
+        <div class="col-sm-12 col-md-6">
+          <div class="card-offer">
+            <img src='<%= cl_image_path band.photo.key, :effect=>"art:zorro", crop: :fill %>' />
+              <div class="card-offer-infos">
+                <h2> <%= offer.fee%></h2>
+                <p> <%= band.name  %> <strong>relevant info</strong> only.</p>
+              </div>
+          </div>
+        </div>
+        <% end %>
+     <%end%>
+
+    <div class="col-sm-12 col-md-6">
+      <div class="card-offer">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-offer-infos">
+            <h2>Product name</h2>
+            <p>Product description with <strong>relevant info</strong> only.</p>
+          </div>
+      </div>
     </div>
-    <% end %>
-    <%= render 'shared/search' %>
-
-
-    <div class="card-offer">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-offer-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
   </div>
-
-</div>
-
-
 </div>

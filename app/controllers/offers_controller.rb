@@ -15,10 +15,12 @@ class OffersController < ApplicationController
   end
 
   def create
+
     @offer = Offer.new(offer_params)
     @offer.band = @band
+    @offer.user = current_user
     if @offer.save
-      redirect_to @band, notice: "Your offer was successfully send."
+      redirect_to  profile_path, notice: "Your offer was successfully send."
     else
       render :new
     end
@@ -38,7 +40,6 @@ class OffersController < ApplicationController
     @offer.destroy
     redirect_to root_path, notice: "Your offer was successfully destroyed."
   end
-
 
   private
 
@@ -67,10 +68,12 @@ class OffersController < ApplicationController
       :accommodation,
       :perdiem,
       :backline,
-      :accommodation,
-      :capacity)
+      :capacity,
+      :link_do_event,
+      :streaming,
+      :ticket
+      )
    end
 end
-
 
 

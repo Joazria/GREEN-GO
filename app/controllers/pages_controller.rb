@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
     def profile
-    @bands = Band.all
+    @bands = Band.includes(:offers).where(offers: { user_id: current_user.id })
   end
 
 

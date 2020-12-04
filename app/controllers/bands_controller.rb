@@ -1,5 +1,5 @@
 class BandsController < ApplicationController
-    before_action :set_band, only: [:show, :edit, :update, :destroy]
+    before_action :set_band, only: [:band_offers, :show, :edit, :update, :destroy]
 
   def index
       @bands = Band.all
@@ -48,6 +48,6 @@ class BandsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def band_params
-  params.require(:band).permit(:name, :release, :website, :facebook, :instagram, :youtube, :spotify, :soundcloud, :email, :local, :team, :yt_video_two, :yt_video_one, :yt_video_three, :destak_discr, :headline, :photo)
+  params.require(:band).permit(:name, :release, :website, :facebook, :instagram, :youtube, :spotify, :soundcloud, :email, :city, :state, :country, :team, :yt_video_two, :yt_video_one, :yt_video_three, :destak_discr, :headline, :photo)
   end
 end
