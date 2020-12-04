@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_193635) do
+ActiveRecord::Schema.define(version: 2020_12_04_143358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_12_02_193635) do
     t.string "soundcloud"
     t.string "spotify"
     t.string "email"
-    t.string "local"
     t.integer "team"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -57,6 +56,9 @@ ActiveRecord::Schema.define(version: 2020_12_02_193635) do
     t.string "yt_video_destak"
     t.string "destak_discr"
     t.string "headline"
+    t.string "city"
+    t.string "state"
+    t.string "country"
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 

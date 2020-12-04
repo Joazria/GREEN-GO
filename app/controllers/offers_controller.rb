@@ -15,8 +15,10 @@ class OffersController < ApplicationController
   end
 
   def create
+
     @offer = Offer.new(offer_params)
     @offer.band = @band
+    @offer.user = current_user
     if @offer.save
       redirect_to @band, notice: "Your offer was successfully send."
     else
@@ -67,10 +69,12 @@ class OffersController < ApplicationController
       :accommodation,
       :perdiem,
       :backline,
-      :accommodation,
-      :capacity)
+      :capacity,
+      :link_do_event,
+      :streaming,
+      :ticket
+      )
    end
 end
-
 
 
