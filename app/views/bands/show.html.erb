@@ -42,7 +42,7 @@
 
      <div class="dates">
           <%  @band.gigs.each do |gig| %>
-       <%= link_to gig do %>
+       <%= link_to band_gig_path(@band, gig), remote: true do %>
         <div class="card-date">
           <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
           <h4> <%= gig.local.upcase %></h4>
@@ -75,5 +75,11 @@
       </div>
     </div>
 </div>
+  <div class="modal fade" id="gigModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
 
+      <%= render 'shared/modal_gigs' %>
+
+    </div>
+  </div>
 
