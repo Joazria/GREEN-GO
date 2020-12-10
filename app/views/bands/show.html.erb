@@ -41,17 +41,17 @@
     </div>
 
      <div class="dates">
-          <%  @band.gigs.each do |gig| %>
-       <%= link_to gig do %>
-        <div class="card-date">
-          <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
-          <h4> <%= gig.local.upcase %></h4>
-          <p> <%= gig.address%>  - <%= gig.state %> </p>
-        </div>
-     <% end %>
-  <% end %>
+            <%  @band.gigs.each do |gig| %>
+         <%= link_to band_gig_path(@band), remote: true do %>
 
-      </div>
+          <div class="card-date">
+            <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
+            <h4> <%= gig.local.upcase %></h4>
+            <p> <%= gig.address%>  - <%= gig.state %> </p>
+          </div>
+       <% end %>
+    <% end %>
+  </div>
 
     <!--  <div class="material">
        <h3>MATERIAL :: Only if logged</h3>
@@ -74,6 +74,23 @@
         <%= get_video_iframe(@band.yt_video_three, width = "280px", height = "167px")%>
       </div>
     </div>
+
 </div>
-
-
+<div class="modal fade" id="gigModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Modal Gig Infos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        INPUT
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
