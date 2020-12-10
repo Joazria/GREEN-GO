@@ -1,12 +1,9 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
 
-def index
-  @gigs = Gig.all
-end
 
 def show
-  @bands = Band.all
+    @band = Band.find(params[:band_id])
 end
 
 def new
