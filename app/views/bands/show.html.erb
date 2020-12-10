@@ -37,21 +37,28 @@
 
     <div class="site">
       <%= link_to "site web", @band.website , :class => "btn btn-site", :target => '_blank' %> </li>
-     <%= link_to "Book Now", @band.website , :class => "btn btn-flat", :target => '_blank' %> </li>
+      <%= link_to "Book Now", @band.website , :class => "btn btn-flat", :target => '_blank' %> </li>
     </div>
 
      <div class="dates">
-          <%  @band.gigs.each do |gig| %>
-       <%= link_to band_gig_path(@band, gig), remote: true do %>
-        <div class="card-date">
-          <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
-          <h4> <%= gig.local.upcase %></h4>
-          <p> <%= gig.address%>  - <%= gig.state %> </p>
+      <%  @band.gigs.each do |gig| %>
+        <%= link_to band_gig_path(@band, gig.id), remote: true, "data-toggle" => "modal", "data-target" => "#gigModal" do %>
+        <div class="modal fade" id="gigModal" tabindex="-1" role="dialog">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <%= render 'shared/modal_gigs' %>
+            </div>
         </div>
-     <% end %>
-  <% end %>
-
       </div>
+          <div class="card-date">
+              <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
+              <h4> <%= gig.local.upcase %></h4>
+              <p> <%= gig.address%>  - <%= gig.state %> </p>
+          </div>
+        <% end %>
+
+     <% end %>
+    </div>
 
     <!--  <div class="material">
        <h3>MATERIAL :: Only if logged</h3>
@@ -74,12 +81,6 @@
         <%= get_video_iframe(@band.yt_video_three, width = "280px", height = "167px")%>
       </div>
     </div>
+
+
 </div>
-  <div class="modal fade" id="gigModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-
-      <%= render 'shared/modal_gigs' %>
-
-    </div>
-  </div>
-
