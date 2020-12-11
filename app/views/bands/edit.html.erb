@@ -1,26 +1,134 @@
 
 <div class="container">
-  <h2>Edit Your Band</h2>
+  <h1>Edit your band</h1>
 
   <%= simple_form_for @band do |f| %>
-    <%= f.input :name, placeholder: 'username' %>
-    <%= f.input :email, placeholder: 'user@domain.com' %>
-    <%= f.input :local, placeholder: 'RJ / SP / FRANCE' %>
-    <%= f.input :headline, placeholder: 'Describe the best in on line' %>
-    <%= f.input :release, placeholder: 'Use Markdown to style your release text' %>
-    <%= f.input :team, placeholder: 'Quantos pessoas tem na sua equipe (tecnicos incluidos)'  %>
-    <%= f.input :website, placeholder: 'www.domain.com' %>
-    <%= f.input :facebook, placeholder: 'facebook/account'  %>
-    <%= f.input :instagram, placeholder: 'instagram/account' %>
-    <%= f.input :soundcloud, placeholder: 'soundcloud/account'%>
-    <%= f.input :spotify, placeholder: 'spotify/IDofYourAccount' %>
-    <%= f.input :youtube , placeholder: 'youtube/account'%>
-    <%= f.input :yt_video_destak, placeholder: 'Best/Last Youtube video destak' %>
-    <%= f.input :destak_discr, placeholder: 'Description of your video Destak caractere 256' %>
-    <%= f.input :yt_video_one, placeholder: 'link youtube video live 1'%>
-    <%= f.input :yt_video_two, placeholder: 'link youtube video live 2' %>
-    <%= f.input :yt_video_three, placeholder: 'link youtube video live 3' %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Edit Band", class: "btn btn-primary" %>
+    <div class="row">
+      <div class="col-6">
+        <%= f.input :name,
+                    label: 'Nome da Banda:',
+                    placeholder: 'James Brown' %>
+      </div>
+       <div class="col-6">
+        <%= f.input :email,
+                    label: 'E-mail da banda:',
+                    placeholder: 'contato@johnlenon.com' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <%= f.input :country,
+                    as: :string,
+                    label: 'Pais',
+                    placeholder: 'Brasil' %>
+      </div>
+      <div class="col-4">
+        <%= f.input :state,
+                    label: 'Estado',
+                    placeholder: 'Rio de Janeiro' %>
+      </div>
+      <div class="col-4">
+        <%= f.input :city,
+                    label: 'Cidade',
+                    placeholder: 'Rio de Janeiro' %>
+      </div>
+
+    </div>
+
+
+    <%= f.input :headline,
+                label:'Headline: presente sua banda em 1 frase',
+                placeholder: 'Jazz festivo tropicalista criado nas ruas do Rio de Janeiro para fazer dançar o mundo' %>,
+    <%= f.input :release,
+                placeholder: 'Use Markdown to style your release text' %>
+
+      <h2>Links / Redes Sociais </h2>
+
+      <div class="row">
+        <div class="col-4">
+           <%= f.input :website,
+                      placeholder: 'https://www.seunkuti.net/' %>
+        </div>
+      <div class="col-4">
+
+          <%= f.input :facebook,
+                      placeholder: 'https://www.facebook.com/mayraandrade'  %>
+
+      </div>
+
+      <div class="col-4">
+
+          <%= f.input :instagram,
+                      placeholder: 'https://www.instagram.com/orquestravoadora/' %>
+
+      </div>
+
+      <div class="col-4">
+
+          <%= f.input :soundcloud,
+                      placeholder: 'https://soundcloud.com/technobrass'%>
+
+
+      </div>
+
+      <div class="col-4">
+
+
+          <%= f.input :spotify,
+                      label:'Id de sua conta spotify',
+                      placeholder: '7yESRvEEjqOTuBgItxH14j' %>
+      </div>
+      </div>
+
+   <h2>YOUTUBE</h2>
+   <div class="row">
+      <div class="col-6">
+        <%= f.input :youtube ,
+                  label: "Qual é a conta youtube de sua banda",
+                  placeholder: 'https://www.youtube.com/c/BandaTechnoBrass'%>
+      </div>
+     </div>
+     <div class="row">
+       <div class="col-6">
+        <%= f.input :yt_video_destak,
+                    label: "Bota o link da video que vc quer botar em destaque",
+                    placeholder: 'https://youtu.be/gsQdcI48CMs' %>
+       </div>
+       <div class="col-6">
+
+     <%= f.input :destak_discr,
+                label: "Punchline para descrever sua video",
+                placeholder: 'Show ao vivo no festival Bout du Monde - european tour 2019', input_html: { maxlength: 256 } %>
+       </div>
+     </div>
+
+     <div class="row">
+        <div class="col-4">
+              <%= f.input :yt_video_one,
+                          label: "Youtube video show ao vivo ou clip",
+                          placeholder: 'https://youtu.be/gsQdcI48CMs'%>
+        </div>
+        <div class="col-4">
+            <%= f.input :yt_video_two,
+                         placeholder: 'https://youtu.be/gsQdcI48CMs' %>
+        </div>
+        <div class="col-4">
+           <%= f.input :yt_video_three,
+                       placeholder: 'https://youtu.be/gsQdcI48CMs' %>
+        </div>
+
+     </div>
+
+    <%= f.input :team,
+                label: 'Quantos integrantes tem na sua banda (musicos + produtor + equipe tecnica',
+                placeholder: '12'  %>
+
+
+    <%= f.input :photo,
+                label: 'upload a banner de sua banda',
+                as: :file %>
+
+
+    <p><%= f.submit "Edit My Band Profile", class: "btn btn-success" %></p>
   <% end %>
 </div>
