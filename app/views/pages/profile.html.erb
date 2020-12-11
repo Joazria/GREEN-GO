@@ -6,22 +6,47 @@
           <div class="card-offer">
             <img src='<%= cl_image_path band.photo.key, :effect=>"art:zorro", crop: :fill %>' />
               <div class="card-offer-infos">
-                <h2> <%= offer.fee%></h2>
-                <p> <%= band.name  %> <strong>relevant info</strong> only.</p>
+                  <div class="event_name">
+                <h3> <%= offer.event_name%></h3>
+                </div>
+                  <div class="local">
+                <h5><%= offer.local%></h5>
+              </div>
+               <div class="date">
+                <h5> <%= offer.date.strftime("%d/%m/%y")%></h5>
+              </div>
+
+
+              <div class="conditions">
+                <% if (offer.transport =='sim') %>
+                   <h2><span class="fas fa-bus-alt "  style=" color: green"></span></h2>
+                   <%else %>
+                    <h2><span class="fas fa-bicycle " ></span></h2>
+                <% end %>
+                <% if (offer.perdiem =='sim') %>
+                   <h2><span class="fas fa-utensils "  style=" color: green"></span></h2>
+                   <%else %>
+                    <h2><span class="fas fa-bone " ></span></h2>
+                <% end %>
+                <% if (offer.accommodation =='sim') %>
+                   <h2><span class="fas fa-bed "  style=" color: green"></span></h2>
+                   <%else %>
+                   <h2><span class="fas fa-campground " ></span></h2>
+                <% end %>
+                 <% if (offer.perdiem =='backline') %>
+                   <h2><span class="fas fa-dolly "  style=" color: green"></span></h2>
+                   <%else %>
+                   <h2><span class="fas fa-microphone-alt-slash" ></span></h2>
+                <% end %>
+              </div>
+
+              <div class="fee">
+                 <h2> R$ <%=offer.fee%></h2>
+              </div>
               </div>
           </div>
         </div>
         <% end %>
      <%end%>
-
-    <div class="col-sm-12 col-md-6">
-      <div class="card-offer">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-offer-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-      </div>
-    </div>
   </div>
 </div>
