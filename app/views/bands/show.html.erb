@@ -21,7 +21,7 @@
     </div>
 
     <div class="youtubevideo">
-        <%= get_video_iframe(@band.yt_video_destak)%>
+        <%= get_video_iframe(@band.yt_video_one)%>
 
         <h2> <%= @band.destak_discr %> </h2>
     </div>
@@ -40,14 +40,13 @@
       <%= link_to "site web", @band.website , :class => "btn btn-site", :target => '_blank' %> </li>
       <%= link_to "Book Now", @band.website , :class => "btn btn-flat", :target => '_blank' %> </li>
     </div>
-
      <div class="dates">
       <%  @band.gigs.each do |gig| %>
-        <%= link_to band_gig_path(@band, gig.id), remote: true, "data-toggle" => "modal", "data-target" => "#gigModal" do %>
-        <div class="modal fade" id="gigModal" tabindex="-1" role="dialog">
+        <%= link_to band_gig_path(@band, gig.id), remote: true, "data-toggle" => "modal", "data-target" => "#gigModal#{gig.id}" do %>
+        <div class="modal fade" id="gigModal<%=gig.id%>" tabindex="-1" role="dialog">
          <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <%= render 'shared/modal_gigs' %>
+            <%= render 'shared/modal_gigs', gig: gig %>
             </div>
         </div>
       </div>
