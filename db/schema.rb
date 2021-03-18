@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_143358) do
+ActiveRecord::Schema.define(version: 2021_01_28_192733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_12_04_143358) do
     t.string "soundcloud"
     t.string "spotify"
     t.string "email"
+    t.string "local"
     t.integer "team"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,6 +61,44 @@ ActiveRecord::Schema.define(version: 2020_12_04_143358) do
     t.string "state"
     t.string "country"
     t.index ["user_id"], name: "index_bands_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string "favoritable_type", null: false
+    t.bigint "favoritable_id", null: false
+    t.string "favoritor_type", null: false
+    t.bigint "favoritor_id", null: false
+    t.string "scope", default: "favorite", null: false
+    t.boolean "blocked", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blocked"], name: "index_favorites_on_blocked"
+    t.index ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
+    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
+    t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
+    t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
+    t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
+  create_table "festivals", force: :cascade do |t|
+    t.string "fb"
+    t.string "insta"
+    t.string "site"
+    t.string "name"
+    t.date "periode_start"
+    t.date "periode_end"
+    t.string "release"
+    t.string "line_up"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
+    t.string "tel"
+    t.string "festival_name"
+    t.string "address"
+    t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["user_id"], name: "index_festivals_on_user_id"
   end
 
   create_table "gigs", force: :cascade do |t|
@@ -129,9 +168,29 @@ ActiveRecord::Schema.define(version: 2020_12_04_143358) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "venues", force: :cascade do |t|
+    t.string "fb"
+    t.string "insta"
+    t.string "site"
+    t.string "venue"
+    t.string "email"
+    t.string "tel"
+    t.string "address"
+    t.string "venue_name"
+    t.string "name"
+    t.string "release"
+    t.string "line_up"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_venues_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bands", "users"
+  add_foreign_key "festivals", "users"
   add_foreign_key "gigs", "bands"
   add_foreign_key "offers", "bands"
   add_foreign_key "offers", "users"
+  add_foreign_key "venues", "users"
 end

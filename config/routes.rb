@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/profile', to: 'pages#profile'
   get '/about_us', to: 'pages#about_us'
+  get '/contact', to: 'pages#contact'
+
 
   resources :bands do
     resources :gigs, only: [:new, :create, :show]
