@@ -1,86 +1,90 @@
 
 <div class="container">
     <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @band.photo.key, :effect=>"art:zorro", crop: :fill %>'" >
-        <h1><%= @band.name %> </h1>
-        <p><%= @band.headline %></p>
+        <h1 class="text-uppercase" ><%= @band.name %> </h1>
+        <p  ><%= @band.headline %></p>
          <%= link_to "Book Now", new_band_offer_path(@band) , :class => "btn btn-flat" %>
     </div>
     <%= render 'shared/search' %>
+
 </div>
-
-
 <div class="container">
-  <div class="main-container">
-  <div class="links">
-      <ul>
-        <li class="list-inline-item"><%= link_to "", @band.instagram , :class => "fab fa-instagram", :target => '_blank'  %> </li>
-        <li class="list-inline-item"><%= link_to "", "https://open.spotify.com/artist/#{@band.spotify}" , :class => "fab fa-spotify", :target => '_blank' %> </li>
-        <li class="list-inline-item"><%= link_to "", @band.youtube , :class => "fab fa-youtube", :target => '_blank' %> </li>
-        <li class="list-inline-item"><%= link_to "", @band.facebook , :class => "fab fa-facebook", :target => '_blank' %> </li>
-      </ul>
-    </div>
+   <section class="menu-band container bg-light sticky-top links border-bottom mb-3">
 
-    <div class="youtubevideo">
-        <%= get_video_iframe(@band.yt_video_one)%>
+  <div class="row mt-1">
+      <h1 class="col-sm-4 p-1 d-flex justify-content-center"><%= @band.name %> </h1>
 
-        <h2> <%= @band.destak_discr %> </h2>
-    </div>
+        <ul class="col-sm-4 p-1 d-flex justify-content-around">
+          <li class="list-inline-item"><%= link_to "", @band.instagram , :class => "fab fa-instagram", :target => '_blank'  %> </li>
+          <li class="list-inline-item"><%= link_to "", "https://open.spotify.com/artist/#{@band.spotify}" , :class => "fab fa-spotify", :target => '_blank' %> </li>
+          <li class="list-inline-item"><%= link_to "", @band.youtube , :class => "fab fa-youtube", :target => '_blank' %> </li>
+          <li class="list-inline-item"><%= link_to "", @band.facebook , :class => "fab fa-facebook", :target => '_blank' %> </li>
+        </ul>
 
-    <div class="release text-justify">
-        <h1><%= @band.name %></h1>
-          <p><%= markdown(@band.release)%></p>
-    </div>
-    <br><br>
 
-    <div class="spotify_player">
-      <iframe src="https://open.spotify.com/embed/artist/<%= @band.spotify %>" width="300" height="380" frameborder="0"></iframe>
+        <div class="col-sm-4 ">
+          <div class="d-flex justify-content-around mb-3">
+           <div class="btn-group" role="group"></div>
+    <!-- <div class=" "> -->
+      <%= link_to "site web", @band.website , :class => "btn btn-outline-success", :target => '_blank' %>
+    <!-- </div> -->
+    <!-- <div class="col-sm-2 p-3"> -->
+            <a class="btn btn-outline-success" href="mailto:joa.azria@gmail.com">book now</a>
+    <!-- </div> -->
     </div>
-
-    <div class="site">
-      <%= link_to "site web", @band.website , :class => "btn btn-site", :target => '_blank' %> </li>
-      <%= link_to "Book Now", @band.website , :class => "btn btn-flat", :target => '_blank' %> </li>
-    </div>
-     <div class="dates">
-      <%  @band.gigs.each do |gig| %>
-        <%= link_to band_gig_path(@band, gig.id), remote: true, "data-toggle" => "modal", "data-target" => "#gigModal#{gig.id}" do %>
-        <div class="modal fade" id="gigModal<%=gig.id%>" tabindex="-1" role="dialog">
-         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <%= render 'shared/modal_gigs', gig: gig %>
-            </div>
+  </div>
         </div>
-      </div>
-          <div class="card-date">
-              <h3> <%= gig.date.strftime("%d/%m/%Y") %></h3>
-              <h4> <%= gig.local.upcase %></h4>
-              <p> <%= gig.address%>  - <%= gig.state %> </p>
-          </div>
-        <% end %>
 
-     <% end %>
+</section>
+
+<section class="p-5 bg-light">
+  <div class="row">
+    <div class="col-lg-8 col-md-12">
+    <div class="embed-responsive embed-responsive-16by9 min-vw">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UAiOKEZsb9A" title="YouTube video" allowfullscreen></iframe>
+</div>
+  <h2 class="mb-3 mt-3 text-uppercase"> <%= @band.destak_discr %> </h2>
+    </div>
+    <div class="col-lg-4 col-md-12">
+      <iframe src="https://open.spotify.com/embed/artist/<%= @band.spotify %>" style="border: 0; width: 100%; height: 380px;" allowfullscreen allow="encrypted-media"></iframe>
     </div>
 
-    <!--  <div class="material">
-       <h3>MATERIAL :: Only if logged</h3>
-        <%= link_to "team members", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
-        <%= link_to "technical rider", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
-        <%= link_to " Mapa do Palco ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
-        <%= link_to " Fotos - HD ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
-        <%= link_to " Clipping ", @band.website , :class => "btn btn-flat", :target => '_blank'  %>
-      </div> -->
+    <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UAiOKEZsb9A" title="YouTube video" allowfullscreen></iframe> -->
+</div>
+  </div>
 
-      <div class="youtube-one">
-        <%= get_video_iframe(@band.yt_video_one, width = "280px", height = "167px") %>
-      </div>
+</section>
 
-      <div class="youtube-two">
-        <%= get_video_iframe(@band.yt_video_two, width = "280px", height = "167px") %>
-      </div>
+  <section class="text-justify container bg-light border-top mt-5">
+     <div class="container">
+         <h2 class="mt-3 text-uppercase" >RELEASE</h2>
+         <div class="text-justify">
+          <p class="lead"><%= markdown(@band.release)%></p>
+     </div>
+   </div>
+</section>
 
-      <div class="youtube-three">
-        <%= get_video_iframe(@band.yt_video_three, width = "280px", height = "167px")%>
+
+<section class="p-5 container bg-light">
+  <h1>+ VIDEOS</h1>
+<div class="row">
+    <div class="col-lg-3  m-1">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UAiOKEZsb9A" title="YouTube video" allowfullscreen></iframe>
       </div>
     </div>
-
+  <div class="col-lg-3 m-1">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UAiOKEZsb9A" title="YouTube video" allowfullscreen></iframe>
+    </div>
+  </div>
+    <div class="col-lg-3 m-1">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UAiOKEZsb9A" title="YouTube video" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
 </div>
+

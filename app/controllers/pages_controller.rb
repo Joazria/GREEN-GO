@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :about_us, :contact]
 
   def home
 
@@ -12,6 +12,10 @@ class PagesController < ApplicationController
 
   def about_us
     @bands = Band.all
+  end
+
+  def contact
+    @users = User.all
   end
 
     def profile
