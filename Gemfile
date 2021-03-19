@@ -31,6 +31,9 @@ gem 'devise'
 gem 'email_validator'
 gem 'youtube_embed'
 gem "redcarpet"
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'mail_form'
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
