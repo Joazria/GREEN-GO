@@ -1,134 +1,17 @@
 
 <div class="container">
-  <h1>CONTACT US</h1>
-
-  <%= simple_form_for @users do |f| %>
-    <div class="row">
-      <div class="col-6">
-        <%= f.input :name,
-                    label: 'Nome da Banda:',
-                    placeholder: 'James Brown' %>
-      </div>
-       <div class="col-6">
-        <%= f.input :email,
-                    label: 'E-mail da banda:',
-                    placeholder: 'contato@johnlenon.com' %>
-      </div>
+      <div id="image" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/numama/image/upload/v1604688711/Birds%20Booking/live_ruh9vp.jpg);">
+          <h1>Green Go Agency</h1>
+          <p> Desenvolvimento de projetos culturais, tour produção e agenciamento de artistas nacionais e internacionais.</p>
+          <a class="btn btn-flat" href="mailto:joa.azria@gmail.com">Contact Us</a>
     </div>
-    <div class="row">
-      <div class="col-4">
-        <%= f.input :country,
-                    as: :string,
-                    label: 'Pais',
-                    placeholder: 'Brasil' %>
-      </div>
-      <div class="col-4">
-        <%= f.input :state,
-                    label: 'Estado',
-                    placeholder: 'Rio de Janeiro' %>
-      </div>
-      <div class="col-4">
-        <%= f.input :city,
-                    label: 'Cidade',
-                    placeholder: 'Rio de Janeiro' %>
-      </div>
+      <%= render 'shared/search' %>
+ </div>
 
-    </div>
-
-
-    <%= f.input :headline,
-                label:'Headline: presente sua banda em 1 frase',
-                placeholder: 'Jazz festivo tropicalista criado nas ruas do Rio de Janeiro para fazer dançar o mundo' %>,
-    <%= f.input :release,
-                placeholder: 'Use Markdown to style your release text' %>
-
-      <h2>Links / Redes Sociais </h2>
-
-      <div class="row">
-        <div class="col-4">
-           <%= f.input :website,
-                      placeholder: 'https://www.seunkuti.net/' %>
-        </div>
-      <div class="col-4">
-
-          <%= f.input :facebook,
-                      placeholder: 'https://www.facebook.com/mayraandrade'  %>
-
-      </div>
-
-      <div class="col-4">
-
-          <%= f.input :instagram,
-                      placeholder: 'https://www.instagram.com/orquestravoadora/' %>
-
-      </div>
-
-      <div class="col-4">
-
-          <%= f.input :soundcloud,
-                      placeholder: 'https://soundcloud.com/technobrass'%>
-
-
-      </div>
-
-      <div class="col-4">
-
-
-          <%= f.input :spotify,
-                      label:'Id de sua conta spotify',
-                      placeholder: '7yESRvEEjqOTuBgItxH14j' %>
-      </div>
-      </div>
-
-   <h2>YOUTUBE</h2>
-   <div class="row">
-      <div class="col-6">
-        <%= f.input :youtube ,
-                  label: "Qual é a conta youtube de sua banda",
-                  placeholder: 'https://www.youtube.com/c/BandaTechnoBrass'%>
-      </div>
-     </div>
-     <div class="row">
-       <div class="col-6">
-        <%= f.input :yt_video_destak,
-                    label: "Bota o link da video que vc quer botar em destaque",
-                    placeholder: 'https://youtu.be/gsQdcI48CMs' %>
-       </div>
-       <div class="col-6">
-
-     <%= f.input :destak_discr,
-                label: "Punchline para descrever sua video",
-                placeholder: 'Show ao vivo no festival Bout du Monde - european tour 2019', input_html: { maxlength: 256 } %>
-       </div>
-     </div>
-
-     <div class="row">
-        <div class="col-4">
-              <%= f.input :yt_video_one,
-                          label: "Youtube video show ao vivo ou clip",
-                          placeholder: 'https://youtu.be/gsQdcI48CMs'%>
-        </div>
-        <div class="col-4">
-            <%= f.input :yt_video_two,
-                         placeholder: 'https://youtu.be/gsQdcI48CMs' %>
-        </div>
-        <div class="col-4">
-           <%= f.input :yt_video_three,
-                       placeholder: 'https://youtu.be/gsQdcI48CMs' %>
-        </div>
-
-     </div>
-
-    <%= f.input :team,
-                label: 'Quantos integrantes tem na sua banda (musicos + produtor + equipe tecnica',
-                placeholder: '12'  %>
-
-
-    <%= f.input :photo,
-                label: 'upload a banner de sua banda',
-                as: :file %>
-
-
-    <p><%= f.submit "Create My Band Profile", class: "btn btn-success" %></p>
-  <% end %>
+<div class="container">
+ <section class="bg-light m-3 text-center">
+<h2>CONTATO & AGENCIAMENTO </h2>
+<h3>joa.azria@gmail.com</h3>
+<h3>+55(21)99699-5765</h3>
+</section>
 </div>
